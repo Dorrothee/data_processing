@@ -20,16 +20,18 @@ header .shadow {
 }
 
 .navbar {
+  list-style-type: none;
   display: flex;
 }
 .navbar a {
+  text-decoration: none;
   padding: 8px 17px;
   color: #cefcad;
   font-size: 1rem;
   text-transform: uppercase;
   font-weight: 500;
 }
-.navbar a:hover {
+.navbar a :hover {
   background: rgba(154, 168, 74, 0.6156862745);
   border-radius: 0.2rem;
   transition: 0.2s all linear;
@@ -43,7 +45,7 @@ header .shadow {
   -moz-column-gap: 0.8rem;
        column-gap: 0.8rem;
 }
-.header_icon .cart {
+.header_icon #cart {
   position: relative;
 }
 .header_icon .cart .cart_amount {
@@ -93,15 +95,15 @@ header .shadow {
   font-size: 1rem;
   color: #092907;
 }
-.search_box input::-moz-placeholder {
+.search_box input ::-moz-placeholder {
   font-size: 1rem;
   font-weight: 500;
 }
-.search_box input:-ms-input-placeholder {
+.search_box input :-ms-input-placeholder {
   font-size: 1rem;
   font-weight: 500;
 }
-.search_box input::placeholder {
+.search_box input ::placeholder {
   font-size: 1rem;
   font-weight: 500;
 }
@@ -116,16 +118,15 @@ header .shadow {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(17rem, auto));
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
 }
-
-.home_text h1 {
+.home .home_text h1 {
   font-size: 3.4rem;
   color: #092907;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-.home_text p {
+.home .home_text p {
   font-size: 1rem;
   color: #092907;
   margin: 0.5rem 0 1.4rem;
