@@ -1,1 +1,11 @@
 <h1>Hello Daryna</h1>
+
+<a href="./servlet">Servlet</a>
+
+<button (click)="getEntities()">Get entities!</button>
+
+<ul>
+  <li *ngFor="let ent of entityList">
+    Model: {{ent.model}}, price: {{ent.price}}
+  </li>
+</ul>
