@@ -1,3 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+
+$main-color: #092907;
+$second-color: #97a57a;
+$text-color: #27410dc4;
+$bg-color: #cefcad;
+$box-shadow: 2px 2px 10px 4px #12430f;
+
 body{
-    color: var(--text-color);
+    color: $text-color;
 }

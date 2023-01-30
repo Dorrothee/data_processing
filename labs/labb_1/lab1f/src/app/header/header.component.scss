@@ -96,17 +96,17 @@ header{
         width: 100%;
         font-size: 1rem;
         color: $main-color;
-        ::placeholder{
-            font-size: 1rem;
-            font-weight: 500;
-        }
+    }
+    input::placeholder{
+        font-size: 1rem;
+        font-weight: 500;
     }
 }
 
 .home{
     width: 100%;
     min-height: 100vh;
-    background: url(src\assets\background.png);
+    background: url(lab1f/src/assets/background.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
