@@ -1,4 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 body {
   color: rgba(39, 65, 13, 0.768627451);
+}
+
+img {
+  width: 100%;
+}
+
+section {
+  padding: 40px 90px;
 }/*# sourceMappingURL=styles.css.map */
