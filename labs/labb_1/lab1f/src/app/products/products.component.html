@@ -1,0 +1,45 @@
+<section class="products" id="products">
+    <div class="heading">
+        <h2>Our products</h2>
+    </div>
+    <button (click)="getEntities()">Get Products!</button>
+
+    <div class="butprod">
+        <div class="obj" *ngFor="let ent of entityList">
+          <img src="{{ent.look}}" alt="">
+          <p class="model">{{ent.model}}</p>
+          <p class="price">$ {{ent.price}}</p> 
+        </div>
+    </div>
+
+    <!-- <div class="products_container">
+        <div class="box">
+            <img src="assets/watch1.png" alt="Garmin MARQ">
+            <h3>Garmin MARQ Commander</h3>
+            <div class="content">
+                <span>$2 590</span>
+            </div>
+        </div>
+        <div class="box">
+            <img src="assets/watch2.png" alt="Garmin Instinct Tactical">
+            <h3>Garmin Instinct 2 Solar Tactical</h3>
+            <div class="content">
+                <span>$610</span>
+            </div>
+        </div>
+        <div class="box">
+            <img src="assets/watch3.png" alt="Garmin Instinct Solar">
+            <h3>Garmin Instinct 2 Solar</h3>
+            <div class="content">
+                <span>$490</span>
+            </div>
+        </div>
+        <div class="box">
+            <img src="assets/watch4.png" alt="Amazfit">
+            <h3>Amazfit T-Rex Army</h3>
+            <div class="content">
+                <span>$360</span>
+            </div>
+        </div>
+    </div> -->
+</section>

@@ -133,6 +133,7 @@ header .shadow {
 }
 
 .btn {
+  text-decoration: none;
   padding: 10px 40px;
   border-radius: 0.3rem;
   background: rgba(61, 101, 6, 0.6549019608);

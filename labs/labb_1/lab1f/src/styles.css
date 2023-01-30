@@ -3,9 +3,14 @@ body {
   color: rgba(39, 65, 13, 0.768627451);
 }
 
-/*img{
-    width: 100%;
-}*/
+img {
+  width: 100%;
+}
+
 section {
   padding: 30px 80px;
+}
+
+.heading {
+  text-align: center;
 }/*# sourceMappingURL=styles.css.map */

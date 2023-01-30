@@ -15,7 +15,7 @@ public class Servlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        Entity entity = new Entity("GARMIN MARQ COMMANDER", 2950);
+        Entity entity = new Entity("assets/watch1.png", "GARMIN MARQ COMMANDER", 2950);
 
         PrintWriter out = response.getWriter();
         response.setContentType("application/json");
