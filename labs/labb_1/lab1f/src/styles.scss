@@ -6,6 +6,10 @@ $text-color: #27410dc4;
 $bg-color: #cefcad;
 $box-shadow: 2px 2px 10px 4px #12430f;
 
+*{
+    font-family: 'Playfair Display', serif;
+}
+
 body{
     color: $text-color;
 }
@@ -20,4 +24,8 @@ section{
 
 .heading{
     text-align: center;
+    h2{
+        font-size: 1.8rem;
+        text-transform: uppercase;
+    }
 }

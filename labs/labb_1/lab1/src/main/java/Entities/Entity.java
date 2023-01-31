@@ -35,6 +35,6 @@ public class Entity {
 
     @Override
     public String toString() {
-        return "{" + "\"image\": \"" + look + "\"" + ", \"model\": " + model + "\"" + ", \"price\": " + price + "}";
+        return "{\"image\": \""+look+"\", \"model\": \""+model+"\", \"price\": "+price+"}";
     }
 }

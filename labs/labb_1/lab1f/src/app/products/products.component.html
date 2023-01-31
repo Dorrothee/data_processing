@@ -1,10 +1,9 @@
 <section class="products" id="products">
-    <div class="heading">
-        <h2>Our products</h2>
+    <div class="buton">
+        <button (click)="getEntities()">Get Our Products!</button>
     </div>
-    <button (click)="getEntities()">Get Products!</button>
-
-    <div class="butprod">
+    
+    <div class="prod">
         <div class="obj" *ngFor="let ent of entityList">
           <img src="{{ent.look}}" alt="">
           <p class="model">{{ent.model}}</p>

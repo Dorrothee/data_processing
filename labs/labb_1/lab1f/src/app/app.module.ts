@@ -7,13 +7,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { AboutComponent } from './about/about.component';
 import { ProductsComponent } from './products/products.component';
+import { ShopComponent } from './shop/shop.component';
+import { TeamComponent } from './team/team.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     AboutComponent,
-    ProductsComponent
+    ProductsComponent,
+    ShopComponent,
+    TeamComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
