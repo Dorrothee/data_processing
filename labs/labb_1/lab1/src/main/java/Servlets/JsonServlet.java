@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 @WebServlet("/json")
 public class JsonServlet extends HttpServlet {
@@ -18,13 +19,17 @@ public class JsonServlet extends HttpServlet {
 
         Entity entity = new Entity("assets/watch1.png", "GARMIN MARQ COMMANDER", 2950);
 
-        String mydata = new Gson().toJson(entity);
+
+        ArrayList<Entity> data = new ArrayList<Entity>();
+        data.add(entity);
+
+        String mydata = new Gson().toJson(data);
 
         PrintWriter out = response.getWriter();
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
 
-        out.print("["+mydata+"]");
+        out.print(mydata);
         out.flush();
     }
 }
