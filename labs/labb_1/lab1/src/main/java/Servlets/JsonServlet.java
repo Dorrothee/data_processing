@@ -24,7 +24,7 @@ public class JsonServlet extends HttpServlet {
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
 
-        out.print(mydata);
+        out.print("["+mydata+"]");
         out.flush();
     }
 }
