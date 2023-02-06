@@ -7,7 +7,7 @@ import { Entity } from '../interfaces/entity';
   providedIn: 'root'
 })
 export class Service1Service {
-url:string = "http://localhost:8888/lab1/json";
+url:string = "http://localhost:8888/lab2/interface";
 
   constructor(private http:HttpClient) { }
 

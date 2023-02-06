@@ -1,3 +1,4 @@
-org\example\Main.class
 Entities\Entity.class
-Servlets\Servlet.class
+Servlets\InterfaceServlet.class
+Servlets\JsonServlet.class
+org\example\Main.class
