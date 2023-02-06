@@ -1,0 +1,64 @@
+.form-group {
+  max-width: 600px;
+
+  .form-field {
+    width: 100%;
+    padding: 5px 0;
+    
+    & > :first-child {
+      width: 100% !important;
+    }
+  }
+
+  .form-array-group {
+    .form-array-header {
+      border-radius: 5px;
+
+      &:hover {
+        background-color: rgba(241, 241, 241, 0.5);
+      }
+
+      .title {
+
+      }
+
+      .description {
+        color: #6c757d;
+        font-size: 0.9rem;
+      }
+
+      .add-button {
+        margin-left: auto;
+      }
+    }
+
+    .form-array-values {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem;
+    }
+
+
+  }
+
+  .padded {
+    padding: 0.5rem;
+  }
+
+  .padded-y {
+    padding: 1rem 0 ;
+  }
+
+  .flex-align-center {
+    display: flex;
+    align-items: center;
+  }
+
+  .margin-left {
+    margin-left: 0.5rem;
+  }
+
+  .margin-left-lg {
+    margin-left: 1rem;
+  }
+}
