@@ -1,4 +1,19 @@
+$main-color: #092907;
+$second-color: #97a57a;
+$text-color: #27410dc4;
+$bg-color: #cefcad;
+$box-shadow: 2px 2px 10px 4px #12430f;
+
+h2{
+  color: $text-color;
+  text-align: center;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+
 .form-group {
+  margin-left: auto;
+  margin-right: auto;
   max-width: 600px;
 
   .form-field {
@@ -8,57 +23,22 @@
     & > :first-child {
       width: 100% !important;
     }
-  }
 
-  .form-array-group {
-    .form-array-header {
-      border-radius: 5px;
-
-      &:hover {
-        background-color: rgba(241, 241, 241, 0.5);
-      }
-
-      .title {
-
-      }
-
-      .description {
-        color: #6c757d;
-        font-size: 0.9rem;
-      }
-
-      .add-button {
-        margin-left: auto;
-      }
+    mat-form-field{
+      color: $main-color;
     }
-
-    .form-array-values {
-      display: flex;
-      align-items: center;
-      padding: 0.5rem;
-    }
-
-
   }
-
-  .padded {
-    padding: 0.5rem;
+.buton{
+  text-align: center;
+  .btn{
+    cursor: pointer;
+    color: $main-color;
+    background-color: $second-color;
+    font-size: 1.4rem;
+    border-radius: 5px;
+    border: none;
   }
+}
 
-  .padded-y {
-    padding: 1rem 0 ;
-  }
-
-  .flex-align-center {
-    display: flex;
-    align-items: center;
-  }
-
-  .margin-left {
-    margin-left: 0.5rem;
-  }
-
-  .margin-left-lg {
-    margin-left: 1rem;
-  }
+  
 }

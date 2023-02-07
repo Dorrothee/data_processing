@@ -1,16 +1,8 @@
-.buton {
-  margin-top: 2rem;
+h2 {
   text-align: center;
-}
-.buton button {
-  cursor: pointer;
   text-transform: uppercase;
-  width: 35rem;
-  background-color: #97a57a;
   color: rgba(39, 65, 13, 0.768627451);
-  font-size: 3rem;
-  border-radius: 5px;
-  border: none;
+  font-size: 2rem;
 }
 
 .prod {

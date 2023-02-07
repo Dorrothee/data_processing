@@ -1,16 +1,18 @@
 import { Component, OnInit, OnDestroy, Output, EventEmitter, Input } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Entity } from '../interfaces/entity';
 
 @Component({
-  selector: 'form',
-  templateUrl: 'form.component.html',
-  styleUrls: ['form.component.scss'],
+  selector: 'app-form',
+  templateUrl: './form.component.html',
+  styleUrls: ['./form.component.scss'],
 })
 export class FormComponent implements OnInit, OnDestroy {
   public formGroup!: FormGroup;
-  @Input() public model: any = {}; // type this properly
+  public model: Entity = {look: "assets/watch2.png", model: "Garmin Instinct 2 Solar Tactical", price: 610};
   @Output() public onChange: EventEmitter<FormGroup> = new EventEmitter<FormGroup>();
   @Output() public onInit: EventEmitter<FormGroup> = new EventEmitter<FormGroup>();
+  @Output() public doPut: EventEmitter<Entity> = new EventEmitter<Entity>();
 
   constructor(private fb: FormBuilder) {
 
@@ -55,5 +57,14 @@ export class FormComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
 
+  }
+
+  onSubmit(){
+    if(this.formGroup.invalid == false){
+      this.model.look=this.f['look'].value;
+      this.model.model=this.f['model'].value;
+      this.model.price=this.f['price'].value;
+      this.doPut.emit(this.model);
+    }
   }
 }

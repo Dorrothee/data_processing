@@ -10,7 +10,15 @@ import { ProductsComponent } from './products/products.component';
 import { ShopComponent } from './shop/shop.component';
 import { TeamComponent } from './team/team.component';
 import { FooterComponent } from './footer/footer.component';
+import { DoputComponent } from './doput/doput.component';
 import { FormComponent } from './form/form.component';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -21,12 +29,21 @@ import { FormComponent } from './form/form.component';
     ShopComponent,
     TeamComponent,
     FooterComponent,
+    DoputComponent,
     FormComponent
   ],
   imports: [
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatInputModule,
+    MatButtonModule,
     BrowserModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
-    HttpClientModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -15,4 +15,9 @@ url:string = "http://localhost:8888/lab2/interface";
     return this.http.get<Entity[]>(this.url);
   }
 
+  public putdata(Look: Object, Model: Object, Price: Object) {
+    this.http.put(this.url + "?look="+Look+"&model="+Model+"&price="+Price, Price).subscribe(data => {
+      console.log(data);
+    });
+  }
 }

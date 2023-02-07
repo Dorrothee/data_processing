@@ -20,4 +20,13 @@ section {
 .heading h2 {
   font-size: 1.8rem;
   text-transform: uppercase;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }/*# sourceMappingURL=styles.css.map */
