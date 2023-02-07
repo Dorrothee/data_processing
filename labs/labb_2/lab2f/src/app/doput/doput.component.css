@@ -6,6 +6,7 @@ h2 {
 }
 
 .doput {
+  margin-top: 50px;
   margin-left: 38%;
 }
 
@@ -13,174 +14,41 @@ h2 {
   display: list-item;
   flex-wrap: wrap;
 }
-
-.Description {
-  width: 670px;
-  font-size: 18px;
-  padding: 10px 10px 10px 5px;
-  display: block;
-  border: none;
-  border-bottom: 1px solid #092907;
-}
-
-.Description:focus {
-  outline: none;
-}
-
-.cell {
+.inputs .cell {
   position: relative;
   margin-bottom: 45px;
 }
-
-.input {
+.inputs .cell .input {
   color: #97a57a;
   font-size: 18px;
-  padding: 10px 10px 10px 5px;
+  padding: 30px 10px 10px 5px;
   display: block;
   width: 300px;
   border: none;
   border-bottom: 1px solid #092907;
 }
-
-.input:focus {
+.inputs .cell .input:focus {
   outline: none;
 }
-
-label {
+.inputs .cell label {
   color: rgba(39, 65, 13, 0.768627451);
-  font-size: 18px;
-  font-weight: normal;
+  font-size: 14px;
   position: absolute;
-  pointer-events: none;
   left: 5px;
   top: 10px;
-  transition: 0.3s ease all;
-  -moz-transition: 0.3s ease all;
-  -webkit-transition: 0.3s ease all;
+  transition: 0.5s ease all;
+  -moz-transition: 0.5s ease all;
+  -webkit-transition: 0.5s ease all;
+}
+.inputs .cell .input:focus ~ label,
+.inputs .cell .input:valid ~ label {
+  top: -13px;
+  font-size: 11px;
+  color: darkred;
 }
 
-.input:focus ~ label,
-.input:valid ~ label {
-  top: -20px;
-  font-size: 14px;
-  color: #092907;
-}
-
-.Description:focus ~ label,
-.Description:valid ~ label {
-  top: -20px;
-  font-size: 14px;
-  color: #092907;
-}
-
-.bar {
-  position: relative;
-  display: block;
-  width: 315px;
-}
-
-.bar:before,
-.bar:after {
-  content: "";
-  height: 2px;
-  width: 0;
-  bottom: 1px;
-  position: absolute;
-  background: #092907;
-  transition: 0.3s ease all;
-  -moz-transition: 0.3s ease all;
-  -webkit-transition: 0.3s ease all;
-}
-
-.bar:before {
-  left: 50%;
-}
-
-.bar:after {
-  right: 50%;
-}
-
-.barx:before,
-.barx:after {
-  content: "";
-  height: 2px;
-  width: 0;
-  bottom: 1px;
-  position: absolute;
-  background: #092907;
-  transition: 0.3s ease all;
-  -moz-transition: 0.3s ease all;
-  -webkit-transition: 0.3s ease all;
-}
-
-.barx:before {
-  left: 50%;
-}
-
-.barx:after {
-  right: 50%;
-}
-
-.input:focus ~ .bar:before,
-.input:focus ~ .bar:after {
-  width: 50%;
-}
-
-.Description:focus ~ .barx:before,
-.Description:focus ~ .barx:after {
-  width: 50%;
-}
-
-.highlight {
-  position: absolute;
-  height: 60%;
-  width: 100px;
-  top: 25%;
-  left: 0;
-  pointer-events: none;
-  opacity: 0.5;
-}
-
-input:focus ~ .highlight {
-  -webkit-animation: inputHighlighter 0.3s ease;
-  animation: inputHighlighter 0.3s ease;
-}
-
-.highlightx {
-  position: absolute;
-  height: 60%;
-  width: 100px;
-  top: 25%;
-  left: 0;
-  pointer-events: none;
-  opacity: 0.5;
-}
-
-input:focus ~ .highlightx {
-  -webkit-animation: inputHighlighter 0.3s ease;
-  animation: inputHighlighter 0.3s ease;
-}
-
-@-webkit-keyframes inputHighlighter {
-  from {
-    background: #092907;
-  }
-  to {
-    width: 0;
-    background: transparent;
-  }
-}
-@keyframes inputHighlighter {
-  from {
-    background: #092907;
-  }
-  to {
-    width: 0;
-    background: transparent;
-  }
-}
 .put {
-  margin-left: 45%;
+  margin-left: 44%;
   width: 150px;
   height: 50px;
   border-radius: 3px;

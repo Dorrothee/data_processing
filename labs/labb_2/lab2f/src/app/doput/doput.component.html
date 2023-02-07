@@ -3,15 +3,11 @@
 <form class="doput">
     <div class="inputs">
         <div class="cell">      
-            <input type="text" #box (keyup)="getlook(box.value)" name="look" required class="input">
-            <span class="highlight"></span>
-            <span class="bar"></span>
+            <input type="text" #img (keyup)="getlook(img.value)" name="look" required class="input">
             <label>Enter information for image</label>
         </div>
         <div class="cell">      
-            <input type="text" #img (keyup)="getmodel(img.value)" name="model" required class="input">
-            <span class="highlight"></span>
-            <span class="bar"></span>
+            <input type="text" #model (keyup)="getmodel(model.value)" name="model" required class="input">
             <label>Enter information for model</label>
         </div>
     </div>
@@ -20,8 +16,6 @@
         <form #p="ngForm" (keyup)="getprice(p)">
             <div class="cell">      
                 <input type="number" name="price" ngModel  required class="input">
-                <span class="highlight"></span>
-                <span class="bar"></span>
                 <label>Enter information for price</label>
             </div>
         </form>
