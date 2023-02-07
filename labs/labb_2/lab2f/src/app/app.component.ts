@@ -8,7 +8,7 @@ import { Service1Service } from './services/service1.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'lab1f';
+  title = 'lab2f';
 
   entityList:Entity[]=[];
 
