@@ -1,4 +1,10 @@
-Entities\Entity.class
-Servlets\InterfaceServlet.class
-Servlets\JsonServlet.class
-org\example\Main.class
+org/example/Main.class
+Servlets/InterfaceServlet.class
+Servlets/ServletConfigInt.class
+Entities/Entity.class
+Servlets/ServletConfig.class
+Crud/FileCrud.class
+Servlets/JsonServlet.class
+Crud/CrudInt.class
+fileIO/FileIO.class
+fileIO/FileIOInt.class

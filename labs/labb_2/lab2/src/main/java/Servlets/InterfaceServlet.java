@@ -10,6 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 @WebServlet("/interface")
 public class InterfaceServlet extends HttpServlet {
@@ -27,7 +28,10 @@ public class InterfaceServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        String mydata = new Gson().toJson(crud.readEntity());
+        ArrayList<Entity> data = new ArrayList<Entity>();
+        data.add(crud.readEntity());
+
+        String mydata = new Gson().toJson(data);
 
         PrintWriter out = response.getWriter();
         response.setContentType("application/json");
