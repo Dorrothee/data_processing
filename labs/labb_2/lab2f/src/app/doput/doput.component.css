@@ -1,0 +1,199 @@
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+  color: rgba(39, 65, 13, 0.768627451);
+  font-size: 2rem;
+}
+
+.doput {
+  margin-left: 38%;
+}
+
+.inputs {
+  display: list-item;
+  flex-wrap: wrap;
+}
+
+.Description {
+  width: 670px;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #092907;
+}
+
+.Description:focus {
+  outline: none;
+}
+
+.cell {
+  position: relative;
+  margin-bottom: 45px;
+}
+
+.input {
+  color: #97a57a;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid #092907;
+}
+
+.input:focus {
+  outline: none;
+}
+
+label {
+  color: rgba(39, 65, 13, 0.768627451);
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.3s ease all;
+  -moz-transition: 0.3s ease all;
+  -webkit-transition: 0.3s ease all;
+}
+
+.input:focus ~ label,
+.input:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #092907;
+}
+
+.Description:focus ~ label,
+.Description:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #092907;
+}
+
+.bar {
+  position: relative;
+  display: block;
+  width: 315px;
+}
+
+.bar:before,
+.bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #092907;
+  transition: 0.3s ease all;
+  -moz-transition: 0.3s ease all;
+  -webkit-transition: 0.3s ease all;
+}
+
+.bar:before {
+  left: 50%;
+}
+
+.bar:after {
+  right: 50%;
+}
+
+.barx:before,
+.barx:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #092907;
+  transition: 0.3s ease all;
+  -moz-transition: 0.3s ease all;
+  -webkit-transition: 0.3s ease all;
+}
+
+.barx:before {
+  left: 50%;
+}
+
+.barx:after {
+  right: 50%;
+}
+
+.input:focus ~ .bar:before,
+.input:focus ~ .bar:after {
+  width: 50%;
+}
+
+.Description:focus ~ .barx:before,
+.Description:focus ~ .barx:after {
+  width: 50%;
+}
+
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+input:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+
+.highlightx {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+input:focus ~ .highlightx {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+
+@-webkit-keyframes inputHighlighter {
+  from {
+    background: #092907;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@keyframes inputHighlighter {
+  from {
+    background: #092907;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+.put {
+  margin-left: 45%;
+  width: 150px;
+  height: 50px;
+  border-radius: 3px;
+  border: 3px solid #cefcad;
+  background-color: #97a57a;
+  color: #cefcad;
+  cursor: pointer;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 100;
+  transition-duration: 0.3s;
+}
+
+.put:hover {
+  background-color: #092907;
+}/*# sourceMappingURL=doput.component.css.map */
