@@ -1,0 +1,55 @@
+h2 {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.container {
+  text-align: center;
+}
+.container .list {
+  display: inline-block;
+  text-align: left;
+  list-style: none;
+}
+.container .list li {
+  cursor: pointer;
+  padding: 5px;
+}
+.container .list span {
+  font-size: 14px;
+  float: right;
+  margin-left: 30px;
+  cursor: pointer;
+  color: #092907;
+  background-color: #cefcad;
+  border-radius: 5px;
+  border: solid 2px #092907;
+}
+
+h3 {
+  margin-top: 50px;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  padding: 4px;
+  border: solid 2px #092907;
+  background-color: #97a57a;
+  color: #092907;
+}
+
+form {
+  text-align: center;
+}
+form input {
+  background-color: rgba(151, 165, 122, 0.4941176471);
+  color: rgba(39, 65, 13, 0.768627451);
+  font-size: 17px;
+}
+form input[type=submit] {
+  color: #cefcad;
+  background-color: #092907;
+  border-radius: 8px;
+  border: solid 2px #cefcad;
+  cursor: pointer;
+}/*# sourceMappingURL=list.component.css.map */
