@@ -47,6 +47,7 @@ h3{
 form{
     text-align: center;
     input{
+        cursor: pointer;
         background-color: #97a57a7e;
         color: $text-color;
         font-size: 17px;
@@ -56,6 +57,5 @@ form{
         background-color: $main-color;
         border-radius: 8px;
         border: solid 2px $bg-color;
-        cursor: pointer;
     }
 }

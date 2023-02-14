@@ -13,6 +13,7 @@ h3 {
   text-align: center;
 }
 .form input {
+  cursor: pointer;
   background-color: rgba(151, 165, 122, 0.4941176471);
   color: rgba(39, 65, 13, 0.768627451);
   font-size: 17px;
