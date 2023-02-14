@@ -31,7 +31,7 @@ export class DoputComponent {
     console.log(this.look)
     console.log(this.model)
     console.log(this.price)
-    this.service.putdata(this.look, this.model, this.price);
+    //this.service.putdata(this.look, this.model, this.price);
   }
 
 }
