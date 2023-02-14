@@ -4,15 +4,27 @@ import java.io.Serializable;
 
 public class Entity implements Serializable {
     private static final long serialVersionUID = 1L;
+
+    private int id;
     private String look;
     private int price;
     private String model;
 
+    public Entity(){}
 
-    public Entity(String look, String model, int price) {
+    public Entity(int id, String look, String model, int price) {
+        this.id = id;
         this.look = look;
         this.model = model;
         this.price = price;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getLook() { return look; }
@@ -38,6 +50,6 @@ public class Entity implements Serializable {
 
     @Override
     public String toString() {
-        return "{\"look\": \""+look+"\", \"model\": \""+model+"\", \"price\": "+price+"}";
+        return "{\"id\": \""+id+"\", \"look\": \""+look+"\", \"model\": \""+model+"\", \"price\": "+price+"}";
     }
 }

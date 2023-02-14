@@ -16,7 +16,7 @@ public class ServletConfig implements ServletConfigInt{
 
     @Override
     public CrudInt getCrud(){
-        return new FileCrud();
+        return cri;
     }
 
 }

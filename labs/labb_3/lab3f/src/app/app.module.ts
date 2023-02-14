@@ -13,6 +13,8 @@ import { FooterComponent } from './footer/footer.component';
 import { DoputComponent } from './doput/doput.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UpdateComponent } from './update/update.component';
+import { ListComponent } from './list/list.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TeamComponent,
     FooterComponent,
     DoputComponent,
+    UpdateComponent,
+    ListComponent,
   ],
   imports: [
     BrowserModule,
