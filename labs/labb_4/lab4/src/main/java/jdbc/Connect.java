@@ -6,14 +6,17 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Connect {
-    private String url = "jdbc:postgresql://localhost:5432/dp2023?user=daryna&password=2023";
+    private String url = "jdbc:postgresql://localhost:5432/dp2023";
     private Connection con;
 
     public Connect(){
         try{
-            this.con = DriverManager.getConnection(this.url);
+            Class.forName("org.postgresql.Driver");
+            this.con = DriverManager.getConnection(this.url, "daryna", "2023");
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 

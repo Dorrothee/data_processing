@@ -17,12 +17,12 @@ public class ServletConfig implements ServletConfigInt{
         this.sqlCRUD = sqlCRUD;
     }
 
-    public void CloseConnection(){
+    /*public void CloseConnection(){
         this.con.closeCon();
-    }
-
-    /*public ServletConfig(){
-        this.con = new Connect();
-        this.sqlCRUD = new SqlCRUD(this.con.getCon());
     }*/
+
+    public ServletConfig(){
+        this.con = new Connect();
+        this.sqlCRUD = new SqlCRUD();
+    }
 }

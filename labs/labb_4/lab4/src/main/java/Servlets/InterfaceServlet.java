@@ -1,35 +1,23 @@
 package Servlets;
 
-import Crud.CrudInt;
 import Crud.LabCRUDInterface;
 import Crud.SqlCRUD;
 import Entities.Watches;
 import com.google.gson.Gson;
-import data.dataList;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jdbc.Connect;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-//import java.util.ArrayList;
-import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.List;
 
 @WebServlet("/interface/*")
 public class InterfaceServlet extends HttpServlet {
     ServletConfigInt servletConfig;
-    LabCRUDInterface<Watches> crud = new SqlCRUD();
-
-    public void init(ServletConfig config) throws ServletException {
-        //this.servletConfig = new ServletConfig();
-        //this.crud = servletConfig.getSqlCRUD();
-        crud = new SqlCRUD();
-    }
+    LabCRUDInterface<Watches> crud;
 
     public void destroy() {
         try{
@@ -37,7 +25,6 @@ public class InterfaceServlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        //this.servletConfig.CloseConnection();
     }
 
     public InterfaceServlet() {
@@ -50,12 +37,7 @@ public class InterfaceServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         setAccessControlHeaders(response);
-
-//        ArrayList<Entity> data = new ArrayList<Entity>();
-//        data.add(crud.readEntity());
-//
         String mydata = new Gson().toJson(crud.read());
-//
         PrintWriter out = response.getWriter();
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
@@ -66,26 +48,15 @@ public class InterfaceServlet extends HttpServlet {
     public void doPut(HttpServletRequest request, HttpServletResponse response) throws IOException {
         setAccessControlHeaders(response);
         Watches watch = Helpers.watchParse(request);
-//        int id = Integer.parseInt(request.getPathInfo().substring(1));
         response.setContentType("application/json");
         crud.update(watch.getId(), watch);
-//        int index = crud.getIndexByWatchId(id, le);
-//        le.set(index, watch);
         doGet(request, response);
-
-//        String look = request.getParameter("look");
-//        String model = request.getParameter("model");
-//        int price = Integer.parseInt(request.getParameter("price"));
-//
-//        crud.updateEntity(new Entity(look,model,price));
     }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         setAccessControlHeaders(response);
         Watches watch = Helpers.watchParse(request);
         crud.create(watch);
-//        watch.setId(crud.getNextId(le));
-//        le.add(watch);
         doGet(request, response);
 
     }
@@ -95,8 +66,6 @@ public class InterfaceServlet extends HttpServlet {
         int id = Integer.parseInt(request.getPathInfo().substring(1));
         response.setContentType("application/json");
         crud.delete(id);
-//        int index = crud.getIndexByWatchId(id, le);
-//        le.remove(index);
         doGet(request, response);
     }
 

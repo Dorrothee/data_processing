@@ -13,6 +13,7 @@ public class SqlCRUD implements LabCRUDInterface<Watches> {
 
     public SqlCRUD(){
         this.connection = new Connect().getCon();
+        System.out.println(connection);
     }
 
     public Connection getConnection() {
@@ -25,9 +26,9 @@ public class SqlCRUD implements LabCRUDInterface<Watches> {
 
     @Override
     public void create(Watches watches) {
-        try{
+        try(
             PreparedStatement st = connection.prepareStatement("INSERT INTO entity (look, model, price) "
-                            + "VALUES (?, ?, ?);");
+                            + "VALUES (?, ?, ?);")){
             st.setString(1, watches.getLook());
             st.setString(2, watches.getModel());
             st.setInt(3, watches.getPrice());
@@ -40,9 +41,9 @@ public class SqlCRUD implements LabCRUDInterface<Watches> {
     @Override
     public List<Watches> read() {
         List<Watches> list = new ArrayList<Watches>();
-        try {
+        try (
             Statement st = connection.createStatement();
-            ResultSet rs = st.executeQuery("SELECT * FROM entity;");
+            ResultSet rs = st.executeQuery("SELECT * FROM entity;");){
             while(rs.next()){
                 list.add(new Watches(rs.getInt(1), rs.getString(2),
                         rs.getString(3),rs.getInt(4) ));
@@ -55,9 +56,9 @@ public class SqlCRUD implements LabCRUDInterface<Watches> {
 
     @Override
     public void update(int id, Watches watches) {
-        try{
+        try(
             PreparedStatement st = connection.prepareStatement("UPDATE entity "
-                    + "SET \"look\"=?, \"model\"=?, \"price\"=? WHERE id=?;");
+                    + "SET \"look\"=?, \"model\"=?, \"price\"=? WHERE id=?;")){
             st.setString(1, watches.getLook());
             st.setString(2, watches.getModel());
             st.setInt(3, watches.getPrice());
@@ -70,8 +71,8 @@ public class SqlCRUD implements LabCRUDInterface<Watches> {
 
     @Override
     public void delete(int id) {
-        try{
-            PreparedStatement st = connection.prepareStatement("DELETE FROM entity WHERE id=?;");
+        try(
+            PreparedStatement st = connection.prepareStatement("DELETE FROM entity WHERE id=?;")){
             st.setInt(1, id);
             st.executeUpdate();
         } catch (SQLException e) {

@@ -6,6 +6,6 @@ import Entities.Watches;
 public interface ServletConfigInt {
 
     public LabCRUDInterface<Watches> getSqlCRUD();
-    public void CloseConnection();
+    //public void CloseConnection();
 
 }
