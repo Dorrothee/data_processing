@@ -1,4 +1,4 @@
-export interface Entity {
+export interface Watches {
     id:number;
     look:string;
     model:string;

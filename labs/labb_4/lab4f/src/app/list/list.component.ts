@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Entity } from '../interfaces/entity';
+import { Watches } from '../interfaces/entity';
 import { Service1Service } from '../services/service1.service';
 
 @Component({
@@ -11,16 +11,16 @@ import { Service1Service } from '../services/service1.service';
 export class ListComponent implements OnInit {
 
   title:string="List of products";
-  entitityList:Entity[]=[];
+  entitityList:Watches[]=[];
   showAddForm:boolean=false;
-  selectedEntity?:Entity;
+  selectedEntity?:Watches;
 
   constructor(private service:Service1Service) {}
 
   ngOnInit(): void{
     this.updateEntities();
     this.service.list.subscribe(
-      (list:Entity[])=>{this.entitityList=list}
+      (list:Watches[])=>{this.entitityList=list}
     );
   }
 
@@ -32,7 +32,7 @@ export class ListComponent implements OnInit {
     );
   }
 
-  addEntities(entity:Entity){
+  addEntities(entity:Watches){
     this.service.postEntities(entity).subscribe(
       (entities)=>{
         this.updateEntities();
@@ -41,7 +41,7 @@ export class ListComponent implements OnInit {
     this.refreshPage();
   }
 
-  onSelect(entity:Entity){
+  onSelect(entity:Watches){
     if(this.selectedEntity && entity.id==this.selectedEntity.id){
       this.selectedEntity=undefined;
     } else{
@@ -49,7 +49,7 @@ export class ListComponent implements OnInit {
     }
   }
 
-  deleteEntities(entity:Entity){
+  deleteEntities(entity:Watches){
     this.service.deleteEntities(entity).subscribe(
       ()=>{
         this.updateEntities();

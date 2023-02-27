@@ -1,9 +1,11 @@
 package Servlets;
 
-import Crud.CrudInt;
+import Crud.LabCRUDInterface;
+import Entities.Watches;
 
 public interface ServletConfigInt {
 
-    public CrudInt getCrud();
+    public LabCRUDInterface<Watches> getSqlCRUD();
+    public void CloseConnection();
 
 }

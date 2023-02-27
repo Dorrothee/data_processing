@@ -1,22 +1,28 @@
 package Servlets;
 
-import Crud.CrudInt;
-import Crud.FileCrud;
+import Crud.SqlCRUD;
+import Crud.LabCRUDInterface;
+import Entities.Watches;
+import jdbc.Connect;
 
 public class ServletConfig implements ServletConfigInt{
-    CrudInt cri;
+    LabCRUDInterface<Watches> sqlCRUD;
+    Connect con;
 
-    public ServletConfig(){
-        this.cri = new FileCrud();
+    public LabCRUDInterface<Watches> getSqlCRUD() {
+        return sqlCRUD;
     }
 
-    public void setCri(CrudInt cri) {
-        this.cri = cri;
+    public void setSqlCRUD(LabCRUDInterface<Watches> sqlCRUD) {
+        this.sqlCRUD = sqlCRUD;
     }
 
-    @Override
-    public CrudInt getCrud(){
-        return cri;
+    public void CloseConnection(){
+        this.con.closeCon();
     }
 
+    /*public ServletConfig(){
+        this.con = new Connect();
+        this.sqlCRUD = new SqlCRUD(this.con.getCon());
+    }*/
 }

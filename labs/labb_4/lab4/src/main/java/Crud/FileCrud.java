@@ -1,6 +1,6 @@
 package Crud;
 
-import Entities.Entity;
+import Entities.Watches;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonIOException;
 import com.google.gson.JsonParser;
@@ -22,11 +22,11 @@ public class FileCrud implements CrudInt {
     }
 
     @Override
-    public Entity readEntity() {
-        return (Entity) fio.loadfromfile();
+    public Watches readEntity() {
+        return (Watches) fio.loadfromfile();
     }
     @Override
-    public void updateEntity(Entity entity) {
+    public void updateEntity(Watches entity) {
         fio.savetofile(entity);
     }
 
@@ -44,8 +44,8 @@ public class FileCrud implements CrudInt {
     }
 
     @Override
-    public Entity watchParse(HttpServletRequest request){
-        Entity watch = new Entity();
+    public Watches watchParse(HttpServletRequest request){
+        Watches watch = new Watches();
         JsonElement jsonElement = bodyParse(request);
         watch.setId(jsonElement.getAsJsonObject().get("id").getAsInt());
         watch.setLook(jsonElement.getAsJsonObject().get("look").getAsString());
@@ -54,10 +54,10 @@ public class FileCrud implements CrudInt {
         return watch;
     }
 
-    public int getNextId(List<Entity> list) {
+    public int getNextId(List<Watches> list) {
         int maxId = 0;
 
-        Iterator<Entity> iterator = list.iterator();
+        Iterator<Watches> iterator = list.iterator();
         while(iterator.hasNext()) {
             int currentId = iterator.next().getId();
             if(currentId>maxId) maxId=currentId;
@@ -65,12 +65,12 @@ public class FileCrud implements CrudInt {
         return maxId+1;
     }
 
-    public int getIndexByWatchId(int id, List<Entity> list) {
+    public int getIndexByWatchId(int id, List<Watches> list) {
         int listId = id;
 
-        Iterator<Entity> iterator = list.iterator();
+        Iterator<Watches> iterator = list.iterator();
         while(iterator.hasNext()) {
-            Entity temp = iterator.next();
+            Watches temp = iterator.next();
             if(temp.getId() == listId) {
                 listId=list.indexOf(temp);
                 break;

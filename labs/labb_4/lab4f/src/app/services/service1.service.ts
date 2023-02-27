@@ -1,31 +1,31 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Entity } from '../interfaces/entity';
+import { Watches } from '../interfaces/entity';
 
 @Injectable({
   providedIn: 'root'
 })
 export class Service1Service {
 
-  list = new BehaviorSubject<Entity[]>([])
+  list = new BehaviorSubject<Watches[]>([])
 
   url:string = "http://localhost:8888/lab4/interface";
 
   constructor(private http:HttpClient) { }
 
-  getEntities():Observable<Entity[]>{
-    return this.http.get<Entity[]>(this.url);
+  getEntities():Observable<Watches[]>{
+    return this.http.get<Watches[]>(this.url);
   }
 
 
-  postEntities(entity:Entity):Observable<Entity[]>{
-    return this.http.post<Entity[]>(this.url,entity);
+  postEntities(entity:Watches):Observable<Watches[]>{
+    return this.http.post<Watches[]>(this.url,entity);
   }
 
 
-  putEntities(entity:Entity):Observable<Entity[]>{
-    return this.http.put<Entity[]>(this.url+"/"+entity.id,entity);
+  putEntities(entity:Watches):Observable<Watches[]>{
+    return this.http.put<Watches[]>(this.url+"/"+entity.id,entity);
   }
 
 
@@ -36,12 +36,12 @@ export class Service1Service {
   // }
 
 
-  deleteEntities(entity:Entity):Observable<Entity[]>{
-    return this.http.delete<Entity[]>(this.url+"/"+entity.id)
+  deleteEntities(entity:Watches):Observable<Watches[]>{
+    return this.http.delete<Watches[]>(this.url+"/"+entity.id)
   }
 
 
-  setList(list:Entity[]){
+  setList(list:Watches[]){
     this.list.next(list);
   }
 }

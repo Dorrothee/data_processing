@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Entity } from '../interfaces/entity';
+import { Watches } from '../interfaces/entity';
 import { Service1Service } from '../services/service1.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { Service1Service } from '../services/service1.service';
 export class ProductsComponent {
   title = 'lab4f';
 
-  entityList:Entity[]=[];
+  entityList:Watches[]=[];
 
   constructor(private service:Service1Service){}
 
