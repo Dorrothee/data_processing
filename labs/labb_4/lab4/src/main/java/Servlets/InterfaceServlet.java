@@ -15,7 +15,7 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 
 @WebServlet("/interface/*")
-public class InterfaceServlet extends HttpServlet {
+public class  InterfaceServlet extends HttpServlet {
     ServletConfigInt servletConfig;
     LabCRUDInterface<Watches> crud;
 
@@ -33,7 +33,41 @@ public class InterfaceServlet extends HttpServlet {
         this.crud = servletConfig.getSqlCRUD();
     }
 
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
+        response.setContentType("application/json");
+        response.getWriter().println(crud.read());
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        Watches watch = Helpers.watchParse(request);
+        crud.create(watch);
+        doGet(request, response);
+    }
+
+    protected void doPut(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        Watches watch = Helpers.watchParse(request);
+        int id = Integer.parseInt(request.getPathInfo().substring(1));
+        response.setContentType("application/json");
+        crud.update(id, watch);
+        doGet(request, response);
+    }
+
+    protected void doDelete(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        int id = Integer.parseInt(request.getPathInfo().substring(1));
+        response.setContentType("application/json");
+        crud.delete(id);
+        doGet(request, response);
+    }
+
+/*
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         setAccessControlHeaders(response);
@@ -67,7 +101,7 @@ public class InterfaceServlet extends HttpServlet {
         response.setContentType("application/json");
         crud.delete(id);
         doGet(request, response);
-    }
+    }*/
 
     @Override
     protected void doOptions(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

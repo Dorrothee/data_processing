@@ -1,10 +1,16 @@
 package Entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 
+@Entity
+@Table(name="entity")
 public class Watches implements Serializable {
     private static final long serialVersionUID = 1L;
 
+    @Id
     private int id;
     private String look;
     private String model;
@@ -49,16 +55,6 @@ public class Watches implements Serializable {
 
     @Override
     public String toString() {
-        return "Watches{" +
-                "id=" + id +
-                ", look='" + look + '\'' +
-                ", model='" + model + '\'' +
-                ", price=" + price +
-                '}';
-    }
-
-    /*@Override
-    public String toString() {
         return "{\"id\": \""+id+"\", \"look\": \""+look+"\", \"model\": \""+model+"\", \"price\": "+price+"}";
-    }*/
+    }
 }

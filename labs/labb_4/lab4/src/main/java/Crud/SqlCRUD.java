@@ -1,13 +1,20 @@
 package Crud;
 
 import Entities.Watches;
+import Servlets.Helpers;
 import jdbc.Connect;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SqlCRUD implements LabCRUDInterface<Watches> {
+    List<Watches> list = new ArrayList<>();
 
     Connection connection;
 
@@ -24,7 +31,100 @@ public class SqlCRUD implements LabCRUDInterface<Watches> {
         this.connection = connection;
     }
 
+
     @Override
+    public void create(Watches watches){
+        final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
+                .configure()
+                .build();
+        try (SessionFactory sessionFactory = new MetadataSources(registry)
+                .addAnnotatedClass(Watches.class)
+                .buildMetadata()
+                .buildSessionFactory()) {
+
+            Session session = sessionFactory.openSession();
+            session.beginTransaction();
+
+            int id = Helpers.getNextId(list);
+
+            session.save(new Watches(
+                    id,
+                    watches.getLook(),
+                    watches.getModel(),
+                    watches.getPrice())
+            );
+
+            session.getTransaction().commit();
+        }
+    }
+
+    @Override
+    public List<Watches> read() {
+        final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
+                .configure()
+                .build();
+        try (SessionFactory sessionFactory = new MetadataSources(registry)
+                .addAnnotatedClass(Watches.class)
+                .buildMetadata()
+                .buildSessionFactory()) {
+
+            Session session = sessionFactory.openSession();
+            session.beginTransaction();
+
+            list = (List<Watches>) session.createQuery("from Watches").list();
+
+            session.getTransaction().commit();
+        }
+
+        return list;
+    }
+
+    @Override
+    public void update(int id, Watches watches) {
+        final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
+                .configure()
+                .build();
+        try (SessionFactory sessionFactory = new MetadataSources(registry)
+                .addAnnotatedClass(Watches.class)
+                .buildMetadata()
+                .buildSessionFactory()) {
+
+            Session session = sessionFactory.openSession();
+            session.beginTransaction();
+
+            Watches updatedwatch = new Watches(
+                    id,
+                    watches.getLook(),
+                    watches.getModel(),
+                    watches.getPrice()
+            );
+            session.update(updatedwatch);
+
+            session.getTransaction().commit();
+        }
+    }
+
+    @Override
+    public void delete(int id){
+        final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
+                .configure()
+                .build();
+        try (SessionFactory sessionFactory = new MetadataSources(registry)
+                .addAnnotatedClass(Watches.class)
+                .buildMetadata()
+                .buildSessionFactory()) {
+
+            Session session = sessionFactory.openSession();
+            session.beginTransaction();
+
+            session.delete(session.get(Watches.class, id));
+
+            session.getTransaction().commit();
+            session.close();
+        }
+    }
+
+    /*@Override
     public void create(Watches watches) {
         try(
             PreparedStatement st = connection.prepareStatement("INSERT INTO entity (look, model, price) "
@@ -78,5 +178,5 @@ public class SqlCRUD implements LabCRUDInterface<Watches> {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 }
