@@ -1,0 +1,50 @@
+body{
+    background-color: #e2f7d9;
+    font-family: 'Playfair Display', serif;
+}
+
+h1{
+  font-size: 40px;
+  text-align: center;
+  text-decoration: underline;
+  letter-spacing: 1px;
+}
+
+.add{
+  font-size: 18px;
+  background-color: #97a57a;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  color: #092907;
+  width: 100px;
+  border-radius: 8px;
+  border: solid 1px;
+  cursor: pointer;
+}
+
+table {
+  border: 1px solid #092907;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+th, td {
+  padding: 17px;
+}
+th{
+  border-bottom: 1px solid #092907;
+}
+a{
+  letter-spacing: 1px;
+  background-color: #97a57a;
+  padding: 1px 5px;
+  text-decoration: none;
+  color: #092907;
+  border-radius: 4px;
+  border: solid 1px;
+  cursor: pointer;
+}

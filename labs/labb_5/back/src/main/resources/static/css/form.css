@@ -1,0 +1,37 @@
+body{
+    background-color: #e2f7d9;
+    font-family: 'Playfair Display', serif;
+}
+
+h1{
+  margin-top: 50px;
+  font-size: 35px;
+  text-align: center;
+  text-decoration: underline;
+  letter-spacing: 1px;
+}
+
+form{
+  display:flex;
+  justify-content: center;
+}
+td{
+  font-size: 20px;
+}
+
+button{
+  color: #092907;
+  background-color: #97a57a;
+  margin-top: 19px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: solid 1px;
+  cursor: pointer;
+  text-align: center;
+  width: 67px;
+}
+
+input{
+  font-size: 14px;
+  color: #092907;
+}
