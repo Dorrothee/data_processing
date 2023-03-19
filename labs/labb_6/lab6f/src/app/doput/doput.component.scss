@@ -1,0 +1,73 @@
+$main-color: #092907;
+$second-color: #97a57a;
+$text-color: #27410dc4;
+$bg-color: #cefcad;
+$box-shadow: 2px 2px 10px 4px #12430f;
+
+h2{
+  text-align: center;
+  text-transform: uppercase;
+  color: $text-color;
+  font-size: 2rem;
+}
+
+.doput {
+  margin-top: 50px;
+  margin-left: 38%;
+  }
+  .inputs {
+    display: list-item;
+    flex-wrap: wrap;
+    .cell {
+      position: relative;
+      margin-bottom: 45px;
+      .input {
+        color: $second-color;
+        font-size: 18px;
+        padding: 30px 10px 10px 5px;
+        display: block;
+        width: 300px;
+        border: none;
+        border-bottom: 1px solid $main-color;
+      }
+      .input:focus {
+        outline: none;
+      }
+      label {
+        color: $text-color;
+        font-size: 14px;
+        position: absolute;
+        left: 5px;
+        top: 10px;
+        transition: 0.5s ease all;
+        -moz-transition: 0.5s ease all;
+        -webkit-transition: 0.5s ease all;
+      }
+      .input:focus~label,
+      .input:valid~label {
+        top: -13px;
+        font-size: 11px;
+        color: darkred;
+      }
+    }
+  }
+  
+  .put {
+    margin-left: 44%;
+    width: 150px;
+    height: 50px;
+    border-radius: 3px;
+    border: 3px solid $bg-color;
+    background-color: $second-color;
+    color: $bg-color;
+    cursor: pointer;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 100;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+  }
+  
+  .put:hover {
+    background-color: $main-color;
+  }
