@@ -10,7 +10,7 @@ export class Service1Service {
 
   list = new BehaviorSubject<Watches[]>([])
 
-  url:string = "http://localhost:8080/lab6/api/watches";
+  url:string = "http://localhost:1313/lab6/api/watches";
 
   constructor(private http:HttpClient) { }
 
