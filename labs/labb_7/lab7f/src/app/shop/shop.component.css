@@ -1,0 +1,74 @@
+.heading {
+  text-align: center;
+}
+.heading h2 {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+
+input:focus,
+button:focus,
+button {
+  border: none;
+  background: none;
+}
+
+.form_control:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.form_control:disabled, .form_control[read-only] {
+  background-color: rgba(151, 165, 122, 0.4470588235);
+  border-radius: 0.7rem;
+}
+
+table {
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.table tr,
+.table tr td {
+  vertical-align: middle;
+}
+.table tr p,
+.table tr td p {
+  text-align: center;
+}
+
+.btn_container {
+  display: flex;
+  align-items: center;
+}
+.btn_container .form_control {
+  max-width: 80px;
+  text-align: center;
+  display: inline-block;
+  margin: 0px 5px;
+  border: 1px solid #092907;
+  border-radius: 0.7rem;
+}
+
+#cart_table .form_control {
+  width: auto;
+  display: inline-block;
+  text-align: center;
+}
+
+.cart_qty_plus,
+.cart_qty_minus {
+  margin: 15px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.model_img {
+  width: 200px;
+  height: 200px;
+}
+.model_img img {
+  width: 100%;
+}/*# sourceMappingURL=shop.component.css.map */

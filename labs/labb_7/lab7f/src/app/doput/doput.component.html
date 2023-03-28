@@ -1,0 +1,26 @@
+<section class="form">
+    <h2>Form</h2>
+<form class="doput">
+    <div class="inputs">
+        <div class="cell">      
+            <input type="text" #img (keyup)="getlook(img.value)" name="look" required class="input">
+            <label>Enter information for image</label>
+        </div>
+        <div class="cell">      
+            <input type="text" #model (keyup)="getmodel(model.value)" name="model" required class="input">
+            <label>Enter information for model</label>
+        </div>
+    </div>
+    
+    <div class="inputs">
+        <form #p="ngForm" (keyup)="getprice(p)">
+            <div class="cell">      
+                <input type="number" name="price" ngModel  required class="input">
+                <label>Enter information for price</label>
+            </div>
+        </form>
+    </div>
+</form>
+
+<button (click)="OnClick()" class="put">Make DoPut</button>
+</section>
