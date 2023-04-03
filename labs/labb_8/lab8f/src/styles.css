@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  font-family: "Playfair Display", serif;
+}
+
+body {
+  color: rgba(39, 65, 13, 0.768627451);
+}
+
+/*img{
+    width: 100%;
+}*/
+section {
+  padding: 30px 80px;
+}
+
+.heading {
+  text-align: center;
+}
+.heading h2 {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}/*# sourceMappingURL=styles.css.map */

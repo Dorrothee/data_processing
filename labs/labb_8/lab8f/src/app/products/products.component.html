@@ -1,0 +1,12 @@
+<section class="products" id="products">
+    
+    <h2>Our Products!</h2>
+    
+    <div class="prod">
+        <div class="obj" *ngFor="let ent of entityList">
+          <img src="{{ent.look}}" alt="">
+          <p class="model">{{ent.model}}</p>
+          <p class="price">$ {{ent.price}}</p> 
+        </div>
+    </div>
+</section>
