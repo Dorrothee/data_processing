@@ -12,13 +12,8 @@ export class Service1Service {
   list = new BehaviorSubject<Watches[]>([])
 
   url:string = "http://localhost:8080/api/watches";
-  mainurl:string = "http://localhost:8080/watches";
 
   constructor(private http:HttpClient) { }
-
-  showEntities():Observable<Http>{
-    return this.http.get<Http>(this.mainurl);
-  }
 
   getEntities():Observable<Watches[]>{
     return this.http.get<Watches[]>(this.url + "/get");
